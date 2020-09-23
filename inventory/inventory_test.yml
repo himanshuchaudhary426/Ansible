@@ -1,0 +1,39 @@
+all:
+  children:
+          development:
+                  hosts:
+                          13.233.34.57: {}
+                          13.127.103.6: {}
+                          13.233.114.183: {}
+
+          linux:
+                  vars:
+                          env: staging
+                          test_version: v1.1
+                  children:
+                          linux2:
+                                  hosts:
+                                          13.233.34.57: {}
+                                          13.127.103.6: {}
+          ubuntu:
+                  vars:
+                          package: nginx
+
+                  children:
+                          ubuntu1804:
+                                  hosts:
+                                          13.233.114.183: {}
+
+          india:
+                  children:
+                          mumbai:
+                                  hosts:
+                                          13.233.34.57: {}
+                                          13.127.103.6: {}
+                                          13.233.114.183: {} 
+
+          ungrouped: {}
+        
+
+
+

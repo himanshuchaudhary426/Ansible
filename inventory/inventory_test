@@ -1,0 +1,31 @@
+[development]
+13.127.103.6
+13.233.34.57
+13.233.114.183
+
+[linux2]
+13.127.103.6
+13.233.34.57
+
+[ubuntu1804]
+13.233.114.183
+
+[mumbai]
+13.127.103.6
+13.233.34.57
+
+[linux:children]
+linux2
+
+[linux:vars]
+# env=staging
+# test_version=v1.1
+
+[ubuntu:vars]
+package=apache2
+
+[ubuntu:children]
+ubuntu1804
+
+[india:children]
+mumbai

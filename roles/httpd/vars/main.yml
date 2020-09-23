@@ -1,0 +1,4 @@
+---
+env: staging
+test_version: v1.1
+# vars file for httpd

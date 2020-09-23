@@ -1,0 +1,8 @@
+---
+- hosts: development
+  become: yes
+  gather_facts: no
+  pre_tasks:
+        - name: "Install Python"
+          raw: 'sudo yum install -y python3'
+...

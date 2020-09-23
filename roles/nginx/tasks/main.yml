@@ -1,0 +1,14 @@
+---
+- name: update packages
+  apt:
+          name: "*"
+          state: latest
+
+- name: install nginx
+  apt:
+          name: nginx
+          state: latest
+  notify: restart nginx
+
+
+# tasks file for nginx

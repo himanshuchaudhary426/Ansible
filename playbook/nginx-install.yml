@@ -1,0 +1,37 @@
+---
+- name: Installing nginx server and starting services
+  hosts: webservers
+  remote_user: ubuntu
+  become: true
+  tasks:
+          - name: Update packages
+            apt:
+                    name: "*"
+                    state: latest
+
+          - name: install nginx
+            apt:
+                    name: nginx
+                    state: latest 
+         
+          - name: start nginx service
+            service:
+                    name: nginx
+                    state: started
+
+- name: Installing openjdk-8
+  hosts: development
+  remote_user: ec2-user
+  become: true
+  tasks:
+          - name: update packages
+            yum:
+                    name: "*"
+                    state: latest
+          
+          - name: install openjdk-8
+            yum:
+                    name: java-1.8.0-openjdk
+                    state: latest 
+
+...

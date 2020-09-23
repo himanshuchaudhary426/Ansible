@@ -1,0 +1,14 @@
+---
+- name: Install httpd 
+  hosts: linux
+  remote_user: ec2-user
+  become: true
+  roles:
+          - httpd
+
+- name: install nginx
+  hosts: ubuntu
+  remote_user: ubuntu
+  become: true
+  roles:
+          - nginx

@@ -1,0 +1,27 @@
+---
+- himanshu:
+        name: Himanshu Chaudhary
+        job: Devops Intern
+        employed: true
+        skills:
+                - java
+                - C
+                - python
+        education: |
+                10th NPS
+                12th NPS
+                B.tech ABES
+
+- pratik:
+        name: Kumar Pratik
+        job: Intern
+        employed: True
+        skills:
+                - pyhton
+                - scala
+                - c++
+        education: |
+                10th
+                12th
+                B.tech
+...

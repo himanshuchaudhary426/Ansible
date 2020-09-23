@@ -1,0 +1,9 @@
+
+[webservers]
+13.233.86.116 ansible_user=ubuntu
+
+[development]
+15.207.106.199
+
+[localhost]
+localhost ansible_connection=local
