@@ -1,0 +1,13 @@
+---
+- name: Install httpd
+  hosts: linux
+  remote_user: ec2-user
+  become: true
+  pre_tasks:
+          - name: "Check packages info"
+            package_facts:
+                    manager: "auto"
+  roles:
+          - role: httpd
+            when: ansible_facts['packages'] == "httpd"
+

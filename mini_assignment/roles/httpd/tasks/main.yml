@@ -1,0 +1,28 @@
+---
+- name: update packages
+  yum:
+          name: "*"
+          state: latest
+
+- debug:
+        msg: "packages updated successfully"
+
+- name: Install httpd
+  yum:
+          name: httpd
+          state: present
+  notify: restart httpd
+- debug:
+        msg: "httpd installed successfully"
+ 
+- name: template file onto remote
+  template:
+          src: "{{ item }}"
+          dest: "/etc/{{ item }}.conf"
+          owner: root
+          group: root
+          mode: 0600
+  loop:
+          - test.j2
+          - test-release.j2
+# tasks file for httpd

@@ -1,0 +1,19 @@
+---
+- name: Install httpd 
+  hosts: linux
+  remote_user: himanshu
+  become: true
+  pre_tasks:
+          - name: "Check packages info"
+            package_facts:
+                    manager: "auto"
+  roles:
+          - role: httpd
+            when: "when httpd not in ansible_facts.packages"
+
+- name: install nginx
+  hosts: ubuntu
+  remote_user: ubuntu
+  become: true
+  roles:
+          - nginx
